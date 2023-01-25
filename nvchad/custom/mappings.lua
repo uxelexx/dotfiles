@@ -8,7 +8,7 @@ M.general = {
     ["L"] = { "$", "line end" },
 
     -- toggle ZenMode
-    ["<leader>zz"] = { ":ZenMode <CR>", "toggle ZenMode" },
+    ["<leader>zz"] = { ":ZenMode <CR>", "toggle ZenMode", opts = { silent = true } },
 
     -- center while search next
     ["n"] = {"nzzzn", "center"},
@@ -21,7 +21,8 @@ M.general = {
     ["<C-d>"] = { "<C-d>zz" },
     ["<C-u>"] = { "<C-u>zz" },
 
-
+    -- organize imports
+    ["<leader>oi"] = { ":OrganizeImports <CR>" }
   },
 
   v = {

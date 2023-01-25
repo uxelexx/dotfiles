@@ -12,7 +12,6 @@ M.ui = {
 M.plugins = {
   status = {
     colorizer = true,
-    -- dashboard = true,
     telescope_media = true,
   },
 
@@ -21,12 +20,27 @@ M.plugins = {
       disable = false,
     },
 
+    -- ["windwp/nvim-autopairs"] = {
+    -- },
+
+    ["windwp/nvim-ts-autotag"] = {
+      config = function()
+        require "custom.plugins.ts-autotag"
+      end
+    },
+
+    ["nvim-treesitter/nvim-treesitter"] = {
+      config = function()
+        require "custom.plugins.treesitter"
+      end,
+    },
+
     ["folke/zen-mode.nvim"] = {
       cmd = "ZenMode",
       config = function()
         require("zen-mode").setup {
           window = {
-            width = 100, -- width will be 85% of the editor width
+            width = 80,
             options = {
               number = true,
               relativenumber = true,
