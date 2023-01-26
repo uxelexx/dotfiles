@@ -20,8 +20,11 @@ M.plugins = {
       disable = false,
     },
 
-    -- ["windwp/nvim-autopairs"] = {
-    -- },
+    ["tpope/vim-surround"] = {
+      -- config = function ()
+      --   require("vim-surround").setup {}
+      -- end,
+    },
 
     ["windwp/nvim-ts-autotag"] = {
       config = function()
