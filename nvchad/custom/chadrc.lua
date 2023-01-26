@@ -8,7 +8,6 @@ M.ui = {
   theme_toggle = { "catppuccin", "nightfox" },
 }
 
-
 M.plugins = {
   status = {
     colorizer = true,
@@ -21,21 +20,12 @@ M.plugins = {
     },
 
     ["tpope/vim-surround"] = {
-      -- config = function ()
-      --   require("vim-surround").setup {}
-      -- end,
     },
 
     ["windwp/nvim-ts-autotag"] = {
       config = function()
-        require "custom.plugins.ts-autotag"
+        require("nvim-ts-autotag").setup {}
       end
-    },
-
-    ["nvim-treesitter/nvim-treesitter"] = {
-      config = function()
-        require "custom.plugins.treesitter"
-      end,
     },
 
     ["folke/zen-mode.nvim"] = {
@@ -62,9 +52,9 @@ M.plugins = {
 
     ["neovim/nvim-lspconfig"] = {
       opt = true,
-      setup = function()
-        require("core.lazy_load").on_file_open "nvim-lspconfig"
-      end,
+      -- setup = function()
+      --   require("core.lazy_load").on_file_open "nvim-lspconfig"
+      -- end,
       config = function()
         require "plugins.configs.lspconfig"
         require "custom.plugins.lspconfig"
@@ -74,6 +64,10 @@ M.plugins = {
 
   override = {
     ["nvim-treesitter/nvim-treesitter"] = {
+      autotag = {
+        enable = true,
+      },
+
       ensure_installed = {
         "bash",
         "comment",
@@ -89,6 +83,7 @@ M.plugins = {
         "typescript",
         "vim",
         "yaml",
+        "prisma",
       },
     },
   },
@@ -102,4 +97,5 @@ M.plugins = {
 }
 
 M.mappings = require "custom.mappings"
+
 return M

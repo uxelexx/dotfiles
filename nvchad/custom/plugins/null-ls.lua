@@ -10,10 +10,10 @@ local sources = {
 
    -- webdev stuff
    b.formatting.prettier,
-   b.formatting.deno_fmt,
+   -- b.formatting.deno_fmt,
 
    -- Lua
-   b.formatting.stylua,
+   -- b.formatting.stylua,
 
    -- Shell
    b.formatting.shfmt,
