@@ -5,7 +5,6 @@ if not present then
 end
 
 zen_mode.setup({
-  require("zen-mode").setup {
     window = {
       width = 80,
       options = {
@@ -13,5 +12,4 @@ zen_mode.setup({
         relativenumber = true,
       }
     },
-  }
 })
