@@ -21,7 +21,6 @@ local sources = {
 }
 
 null_ls.setup {
-  require("typescript.extensions.null-ls.code-actions"),
   debug = true,
   sources = sources,
   -- on_attach = function(client, bufnr)

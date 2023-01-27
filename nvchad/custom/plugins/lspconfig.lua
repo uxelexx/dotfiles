@@ -4,8 +4,6 @@ if not present then
   return
 end
 
-local M = {}
-
 -- custom.plugins.lspconfig
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
@@ -53,4 +51,3 @@ lspconfig.tsserver.setup {
   }
 }
 
-return M

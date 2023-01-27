@@ -42,10 +42,6 @@ M.general = {
     -- exit insert mode
     ["jj"] = { "<ESC>", "Escape insert mode" },
 
-      -- function()
-      --   vim.lsp.buf.format { async = true }
-      -- end,
-
     -- save and exit insert mode
     ["<C-s>"] = { "<cmd> w <CR><ESC>", "save file and escape" },
   }
