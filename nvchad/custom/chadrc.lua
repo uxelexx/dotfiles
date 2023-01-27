@@ -3,7 +3,7 @@
 local M = {}
 
 M.ui = {
-  theme = "nightfox",
+  theme = "catppuccin",
   transparency = true,
   theme_toggle = { "catppuccin", "nightfox" },
 }
@@ -22,9 +22,30 @@ M.plugins = {
     ["tpope/vim-surround"] = {
     },
 
+    ["jose-elias-alvarez/typescript.nvim"] = {
+      config = function ()
+        require "custom.plugins.typescript"
+      end,
+    },
+
     ["windwp/nvim-ts-autotag"] = {
       config = function()
         require("nvim-ts-autotag").setup {}
+      end,
+    },
+
+    ["Pocco81/auto-save.nvim"] = {
+      config = function()
+        require("auto-save").setup {
+          execution_message = {
+            message = function() -- message to print on save
+              return ("AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"))
+            end,
+            dim = 0.18, -- dim the color of `message`
+            cleaning_interval = 1250, -- (milliseconds) automatically clean MsgArea after displaying `message`. See :h MsgArea
+          },
+          trigger_events = {"InsertLeave", "TextChanged"},
+        }
       end
     },
 

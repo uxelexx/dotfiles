@@ -1,6 +1,10 @@
-local M = {}
+local present, lspconfig = pcall(require, "lspconfig")
 
-local lspconfig = require "lspconfig"
+if not present then
+  return
+end
+
+local M = {}
 
 -- custom.plugins.lspconfig
 local on_attach = require("plugins.configs.lspconfig").on_attach
@@ -18,8 +22,7 @@ local servers = {
   "graphql",
   "marksman",
   "tailwindcss",
-
-
+  "eslint",
 }
 
 for _, lsp in ipairs(servers) do
