@@ -11,16 +11,16 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local servers = {
   "html",
   "cssls",
-  "cssmodules_ls",
   "tsserver",
-  "svelte",
   "emmet_ls",
   "jsonls",
   "prismals",
   "graphql",
-  "marksman",
   "tailwindcss",
   "eslint",
+  -- "marksman",
+  -- "svelte",
+  -- "cssmodules_ls",
 }
 
 for _, lsp in ipairs(servers) do

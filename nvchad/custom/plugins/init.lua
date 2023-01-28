@@ -1,49 +1,65 @@
 return {
-  status = {
-    colorizer = true,
-    telescope_media = true,
+  colorizer = true,
+  telescope_media = true,
+
+  ["goolord/alpha-nvim"] = {
+    disable = false,
   },
 
-  user = {
-    ["goolord/alpha-nvim"] = {
-      disable = false,
-    },
+  ["nvim-treesitter/nvim-treesitter-context"] = {},
 
-    ["tpope/vim-surround"] = {},
+  ["nvim-tree/nvim-tree.lua"] = {
+    override_options = {
+      git = {
+        enable = true,
+        ignore = false,
+      },
+      renderer = {
+        icons = {
+          show = {
+            file = true,
+            folder = true,
+            folder_arrow = true,
+            git = true,
+          },
+        },
+      },
+    }
+  },
 
-    ["windwp/nvim-ts-autotag"] = {
-      config = function()
-        require("nvim-ts-autotag").setup {}
-      end,
-    },
+  ["tpope/vim-surround"] = {},
 
-    ["Pocco81/auto-save.nvim"] = {
-      config = function()
-        require "custom.plugins.autosave"
-      end
-    },
+  ["windwp/nvim-ts-autotag"] = {
+    config = function()
+      require("nvim-ts-autotag").setup {}
+    end,
+  },
 
-    ["folke/zen-mode.nvim"] = {
-      cmd = "ZenMode",
-      config = function()
-        require "custom.plugins.zenmode"
-      end,
-    },
-    
+  ["Pocco81/auto-save.nvim"] = {
+    config = function()
+      require "custom.plugins.autosave"
+    end
+  },
 
-    ["jose-elias-alvarez/null-ls.nvim"] = {
-      after = "nvim-lspconfig",
-      config = function()
-        require "custom.plugins.null-ls"
-      end,
-    },
+  ["folke/zen-mode.nvim"] = {
+    cmd = "ZenMode",
+    config = function()
+      require "custom.plugins.zenmode"
+    end,
+  },
 
-    ["neovim/nvim-lspconfig"] = {
-      config = function()
-        require "plugins.configs.lspconfig"
-        require "custom.plugins.lspconfig"
-      end,
-    },
+  ["jose-elias-alvarez/null-ls.nvim"] = {
+    after = "nvim-lspconfig",
+    config = function()
+      require "custom.plugins.null-ls"
+    end,
+  },
+
+  ["neovim/nvim-lspconfig"] = {
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.lspconfig"
+    end,
   },
 
   ["nvim-treesitter/nvim-treesitter"] = {
@@ -54,8 +70,6 @@ return {
     override_options = {
       ensure_installed = {
         "bash",
-        "comment",
-        "cpp",
         "css",
         "graphql",
         "html",
@@ -65,8 +79,6 @@ return {
         "regex",
         "tsx",
         "typescript",
-        "vim",
-        "yaml",
         "prisma",
       },
     },
