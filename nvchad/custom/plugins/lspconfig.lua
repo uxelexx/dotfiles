@@ -1,22 +1,17 @@
-local present, lspconfig = pcall(require, "lspconfig")
-
-if not present then
-  return
-end
-
--- custom.plugins.lspconfig
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
+
+local lspconfig = require "lspconfig"
 
 local servers = {
   "html",
   "cssls",
   "tsserver",
-  "emmet_ls",
-  "jsonls",
   "tailwindcss",
-  "eslint",
   "prismals",
+  "jsonls",
+  -- "emmet_ls",
+  -- "eslint",
   -- "graphql",
   -- "marksman",
   -- "svelte",

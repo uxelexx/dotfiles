@@ -10,8 +10,7 @@ local sources = {
 
   -- webdev stuff
   b.formatting.prettier,
-  -- b.formatting.prismaFmt,
-
+  b.formatting.prismaFmt,
   -- b.formatting.deno_fmt,
 
   -- Lua
@@ -22,9 +21,9 @@ local sources = {
   -- b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
 }
 
-null_ls.setup {
-  debug = true,
+local  options = {
   sources = sources,
+  debug = true,
   -- on_attach = function(client, bufnr)
   --   if client.supports_method("textDocument/formatting") then
   --     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
@@ -39,3 +38,5 @@ null_ls.setup {
   --   end
   -- end,
 }
+
+null_ls.setup(options)

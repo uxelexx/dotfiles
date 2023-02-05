@@ -52,8 +52,6 @@ M.general = {
 -- Plugins remaps
 
 M.lspconfig = {
-  plugin = true,
-
   n = {
     ["<A-d>"] = {
       function()
@@ -65,7 +63,6 @@ M.lspconfig = {
 }
 
 -- M.telescope = {
---   plugin = true,
 --
 --   n = {
 --     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },

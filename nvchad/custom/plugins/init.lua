@@ -1,17 +1,19 @@
+local overrides = require "custom.plugins.overrides"
+
 return {
-  colorizer = true,
-  telescope_media = true,
-
-  ["prisma/vim-prisma"] = {},
-
-  ["nvim-treesitter/nvim-treesitter-context"] = {},
-
-  ["tpope/vim-surround"] = {},
-
-  ["kdheepak/lazygit.nvim"] = {},
-
   ["goolord/alpha-nvim"] = {
     disable = false,
+  },
+
+  ["folke/which-key.nvim"] = {
+    disable = false,
+  },
+
+  ["neovim/nvim-lspconfig"] = {
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.lspconfig"
+    end,
   },
 
   ["NvChad/ui"] = {
@@ -22,34 +24,15 @@ return {
     },
   },
 
-  ["nvim-tree/nvim-tree.lua"] = {
-    override_options = {
-      git = {
-        enable = true,
-        ignore = false,
-      },
-      renderer = {
-        icons = {
-          show = {
-            git = true,
-          },
-        },
-      },
-    },
-  },
+  ["nvim-tree/nvim-tree.lua"] = { override_options = overrides.nvimtree },
+  ["nvim-treesitter/nvim-treesitter"] = { override_options =  overrides.treesitter },
+  ["williamboman/mason.nvim"] = { override_options = overrides.mason },
 
-  ["windwp/nvim-ts-autotag"] = {
-    after = "nvim-treesitter",
-    config = function()
-      require("nvim-ts-autotag").setup {}
-    end,
-  },
+  -------------------------------- custom ------------------------------------
 
-  ["Pocco81/auto-save.nvim"] = {
-    config = function()
-      require "custom.plugins.autosave"
-    end
-  },
+  ["tpope/vim-surround"] = {},
+
+  ["kdheepak/lazygit.nvim"] = {},
 
   ["folke/zen-mode.nvim"] = {
     config = function()
@@ -64,32 +47,32 @@ return {
     end,
   },
 
-  ["neovim/nvim-lspconfig"] = {
+  ["Pocco81/auto-save.nvim"] = {
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.plugins.lspconfig"
+      require "custom.plugins.autosave"
+    end
+  },
+
+  ["nvim-treesitter/nvim-treesitter-context"] = {
+    after = "nvim-treesitter",
+    config = function()
+      local present, treesitter_context = pcall(require, "nvim-treesitter-context")
+
+      if present then
+        treesitter_context.setup()
+      end
     end,
   },
 
-  ["nvim-treesitter/nvim-treesitter"] = {
-    autotag = {
-      enable = true,
-    },
+  ["windwp/nvim-ts-autotag"] = {
+    ft = { "html", "javascriptreact", "typescriptreact" },
+    after = "nvim-treesitter",
+    config = function()
+      local present, autotag = pcall(require, "nvim-ts-autotag")
 
-    override_options = {
-      ensure_installed = {
-        "css",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "tsx",
-        "typescript",
-        "prisma",
-        -- "bash",
-        -- "graphql",
-        -- "regex",
-      },
-    },
+      if present then
+        autotag.setup()
+      end
+    end,
   },
 }
