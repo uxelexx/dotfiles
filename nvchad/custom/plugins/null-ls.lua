@@ -10,6 +10,8 @@ local sources = {
 
   -- webdev stuff
   b.formatting.prettier,
+  -- b.formatting.prismaFmt,
+
   -- b.formatting.deno_fmt,
 
   -- Lua

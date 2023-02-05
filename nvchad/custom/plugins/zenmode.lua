@@ -4,12 +4,15 @@ if not present then
   return
 end
 
-zen_mode.setup({
-    window = {
-      width = 80,
-      options = {
-        number = true,
-        relativenumber = true,
-      }
-    },
-})
+local options = {
+  cmd = "ZenMode",
+  window = {
+    width = 80,
+    options = {
+      number = true,
+      relativenumber = true,
+    }
+  },
+}
+
+zen_mode.setup(options)
