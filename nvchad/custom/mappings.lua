@@ -1,6 +1,4 @@
-local M = {
-
-}
+local M = {}
 
 M.general = {
   n = {
@@ -36,6 +34,8 @@ M.general = {
     -- yank to clipboard
     ["<leader>c"] = { '"*y', "yank to clipboard"},
 
+    ["y"] = { "ygv<ESC>", "yank without moving" }
+
   },
 
   i = {
@@ -47,6 +47,22 @@ M.general = {
   }
 }
 
+
+
+
+M.lspconfig = {
+  plugin = true,
+
+  n = {
+    ["<A-d>"] = {
+      function()
+        vim.diagnostic.open_float()
+      end,
+      "floating diagnostic",
+    },
+  },
+}
+
 M.telescope = {
   plugin = true,
 
@@ -55,4 +71,5 @@ M.telescope = {
     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
   }
 }
-return M
+
+do return M end

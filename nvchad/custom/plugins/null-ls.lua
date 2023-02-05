@@ -16,8 +16,8 @@ local sources = {
   -- b.formatting.stylua,
 
   -- Shell
-  b.formatting.shfmt,
-  b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
+  -- b.formatting.shfmt,
+  -- b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
 }
 
 null_ls.setup {
