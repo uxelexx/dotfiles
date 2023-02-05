@@ -5,22 +5,24 @@ M.general = {
     ["H"] = { "^", "line start" },
     ["L"] = { "$", "line end" },
 
-    -- toggle ZenMode
-    ["<leader>zz"] = { ":ZenMode <CR>", "toggle ZenMode", opts = { silent = true } },
-
     -- center while search next
     ["n"] = {"nzzzn", "center"},
     ["N"] = {"Nzzzn", "center"},
 
-    -- select all
-    ["<C-a>"] = { "gg<s-v>G", "Select all" },
+    ["<C-a>"] = { "gg<s-v>G", "Select all" }, -- select all
 
     -- center while seach 
     ["<C-d>"] = { "<C-d>zz" },
     ["<C-u>"] = { "<C-u>zz" },
 
     -- organize imports
-    ["<leader>oi"] = { ":OrganizeImports <CR>" }
+    ["<leader>oi"] = { ":OrganizeImports <CR>" },
+
+    -- lazygit
+    ["<leader>lg"] = { ":LazyGit<CR>", "Open LazyGit", opts = { silent = true } },
+
+    -- zenmode
+    ["<leader>zz"] = { ":ZenMode <CR>", "toggle ZenMode", opts = { silent = true } },
   },
 
   v = {
@@ -47,8 +49,7 @@ M.general = {
   }
 }
 
-
-
+-- Plugins remaps
 
 M.lspconfig = {
   plugin = true,
@@ -63,13 +64,12 @@ M.lspconfig = {
   },
 }
 
-M.telescope = {
-  plugin = true,
-
-  n = {
-    -- find
-    ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
-  }
-}
+-- M.telescope = {
+--   plugin = true,
+--
+--   n = {
+--     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
+--   }
+-- }
 
 do return M end

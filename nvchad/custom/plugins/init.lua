@@ -8,8 +8,18 @@ return {
 
   ["tpope/vim-surround"] = {},
 
+  ["kdheepak/lazygit.nvim"] = {},
+
   ["goolord/alpha-nvim"] = {
     disable = false,
+  },
+
+  ["NvChad/ui"] = {
+    override_options = {
+      statusline = {
+        separator_style = "round",
+      },
+    },
   },
 
   ["nvim-tree/nvim-tree.lua"] = {
@@ -42,7 +52,6 @@ return {
   },
 
   ["folke/zen-mode.nvim"] = {
-    cmd = "ZenMode",
     config = function()
       require "custom.plugins.zenmode"
     end,
