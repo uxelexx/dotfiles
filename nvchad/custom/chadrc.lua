@@ -5,7 +5,7 @@ local M = {}
 M.ui = {
   theme = "nightfox",
   transparency = true,
-  theme_toggle = { "catppuccin", "nightfox" },
+  theme_toggle = { "monekai", "nightfox" },
 }
 
 M.plugins = require "custom.plugins"

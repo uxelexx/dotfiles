@@ -37,7 +37,6 @@ M.general = {
     ["<leader>c"] = { '"*y', "yank to clipboard"},
 
     ["y"] = { "ygv<ESC>", "yank without moving" }
-
   },
 
   i = {
@@ -52,6 +51,7 @@ M.general = {
 -- Plugins remaps
 
 M.lspconfig = {
+
   n = {
     ["<A-d>"] = {
       function()
@@ -69,4 +69,4 @@ M.lspconfig = {
 --   }
 -- }
 
-do return M end
+return M
