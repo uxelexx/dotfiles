@@ -20,8 +20,8 @@ Set-PSFzfOption -PSReadLineChordProvider 'Ctrl+f' -PSReadLineChordReverseHitory 
 Set-Alias g git
 Set-Alias lg lazygit
 Set-Alias ex explorer
-Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
-
+# Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
+Set-Alias vi nvim
 
 # git status
 function Get-GitStatus { & git status $args }
