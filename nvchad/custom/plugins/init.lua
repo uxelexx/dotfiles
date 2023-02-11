@@ -35,6 +35,17 @@ return {
 
   ["kdheepak/lazygit.nvim"] = {},
 
+  ["j-hui/fidget.nvim"] = {
+    after = "nvim-lspconfig",
+    config = function()
+      local present, fidget = pcall(require, "fidget")
+
+      if present then
+        fidget.setup()
+      end
+    end,
+  },
+
   ["folke/zen-mode.nvim"] = {
     config = function()
       require "custom.plugins.zenmode"
