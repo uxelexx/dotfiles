@@ -11,6 +11,7 @@ M.treesitter = {
     "tsx",
     "typescript",
     "prisma",
+    "go",
     -- "bash",
     -- "graphql",
     -- "regex",
@@ -45,14 +46,14 @@ M.mason = {
   ensure_installed = {
     -- lua stuff
     "lua-language-server",
-    "stylua",
+    -- "stylua",
 
     -- web dev
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
-    "deno",
-    -- "emmet-ls",
+    -- "deno",
+    "emmet-ls",
     "json-lsp",
     "tailwindcss-language-server",
 
@@ -85,8 +86,6 @@ M.alpha = {
       "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⠄⢻⣯⢃⣿⠤⣿⣞⠰⣽⣿⡇⡼⣿⣣⡝⢼⣿⡇⣼⠚⠇⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
       "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⠀⠀⠌⢻⠘⣿⡇⡘⣿⣿⡗⣹⣿⣿⠄⢻⣿⡳⡟⠀⠨⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
       "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠻⠁⠈⢼⣿⣟⢸⣿⡟⢌⠚⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-      "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠉⠀⢎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-      "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
     },
   },
 

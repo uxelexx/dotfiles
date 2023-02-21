@@ -11,6 +11,7 @@ local servers = {
   "prismals",
   "jsonls",
   "eslint",
+  "gopls",
   -- "emmet_ls",
   -- "graphql",
   -- "marksman",
