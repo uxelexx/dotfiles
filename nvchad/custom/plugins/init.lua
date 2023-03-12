@@ -32,8 +32,13 @@ return {
   -------------------------------- custom ------------------------------------
 
   ["tpope/vim-surround"] = {},
-
   ["kdheepak/lazygit.nvim"] = {},
+
+  -- ["mg979/vim-visual-multi"] = {
+  --   config = function ()
+  --     require "custom.plugins.vim-visual"
+  --   end
+  -- },
 
   ["j-hui/fidget.nvim"] = {
     after = "nvim-lspconfig",
@@ -41,7 +46,11 @@ return {
       local present, fidget = pcall(require, "fidget")
 
       if present then
-        fidget.setup()
+        fidget.setup({
+          window = {
+            blend = 0,
+          },
+        })
       end
     end,
   },
