@@ -1,9 +1,4 @@
-local present, null_ls = pcall(require, "null-ls")
-
-if not present then
-  return
-end
-
+local null_ls = require "null-ls"
 local b = null_ls.builtins
 
 local sources = {
@@ -22,8 +17,8 @@ local sources = {
 }
 
 local  options = {
-  sources = sources,
   debug = true,
+  sources = sources,
   -- on_attach = function(client, bufnr)
   --   if client.supports_method("textDocument/formatting") then
   --     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })

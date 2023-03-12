@@ -1,11 +1,6 @@
-local present, zen_mode = pcall(require, "zen-mode")
-
-if not present then
-  return
-end
+local zen_mode = require "zen-mode"
 
 local options = {
-  cmd = "ZenMode",
   window = {
     width = 80,
     options = {

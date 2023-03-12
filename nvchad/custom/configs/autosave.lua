@@ -1,8 +1,4 @@
-local present, auto_save = pcall(require, "auto-save")
-
-if not present then
-  return
-end
+local auto_save = require "auto-save"
 
 local options = {
   execution_message = {
