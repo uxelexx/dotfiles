@@ -85,10 +85,10 @@ return {
 
   {
     "windwp/nvim-ts-autotag",
-    lazy = false,
-    dependencies = 'nvim-treesitter',
-    filetypes = { "html", "javascriptreact", "typescriptreact" },
-    opts = {  }
+    event = "InsertEnter",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
   },
 }
 

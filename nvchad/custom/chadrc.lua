@@ -1,20 +1,17 @@
 ---@type ChadrcConfig
 local M = {}
 
-local highlights = require "custom.highlights"
+M.plugins = "custom.plugins"
+
+M.mappings = require "custom.mappings"
 
 M.ui = {
   transparency = true,
-
-  theme = "nightfox",
-  theme_toggle = { "monekai", "nightfox" },
-
-  hl_override = highlights.override,
-  hl_add = highlights.add,
+  theme = "catppuccin",
 
   statusline = {
     separator_style = "round",
-    theme = "minimal",
+    theme = "default",
   },
 
   nvdash = {
@@ -45,15 +42,6 @@ M.ui = {
 
   },
 
-  cheatsheet = {
-    theme = "simple"
-  }
-
 }
-
-
-M.plugins = "custom.plugins"
-
-M.mappings = require "custom.mappings"
 
 return M
