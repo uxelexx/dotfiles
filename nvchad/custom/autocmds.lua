@@ -13,3 +13,6 @@ autocmd("InsertLeave", {
   end
 })
 
+--go tags
+
+

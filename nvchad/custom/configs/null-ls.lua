@@ -7,6 +7,7 @@ local sources = {
   b.formatting.prettier,
   b.formatting.prismaFmt,
   b.formatting.gofmt,
+  b.formatting.lua_format,
   -- b.formatting.deno_fmt,
 
   -- Lua

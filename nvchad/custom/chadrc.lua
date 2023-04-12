@@ -7,15 +7,18 @@ M.mappings = require "custom.mappings"
 
 M.ui = {
   transparency = true,
-  theme = "catppuccin",
+  theme = "nightfox",
+  hl_override = {
+    Comment = { italic = true },
+  },
 
   statusline = {
-    separator_style = "round",
-    theme = "default",
+    separator_style = "default",
+    theme = "vscode",
   },
 
   nvdash = {
-    load_on_startup = true,
+    load_on_startup = false,
 
     header = {
       "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣄⢲⡰⣄⢂⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀",

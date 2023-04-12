@@ -43,12 +43,11 @@ return {
 
   {
     "tpope/vim-surround",
-    lazy = false
+    event = "InsertEnter",
   },
 
   {
     "kdheepak/lazygit.nvim",
-    lazy = true,
     cmd = 'LazyGit',
   },
 
@@ -70,7 +69,7 @@ return {
 
   {
     "Pocco81/auto-save.nvim",
-    lazy = false,
+    event = "InsertEnter",
     config = function()
       require "custom.configs.autosave"
     end
@@ -78,13 +77,15 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter-context",
-    lazy = false,
+    -- lazy = false,
+    event = "InsertEnter",
     dependencies = 'nvim-treesitter',
     opts = {  }
   },
 
   {
     "windwp/nvim-ts-autotag",
+    -- lazy = false,
     event = "InsertEnter",
     config = function()
       require("nvim-ts-autotag").setup()

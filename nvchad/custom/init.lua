@@ -1,4 +1,5 @@
 require "custom.autocmds"
+require "custom.commands"
 
 local opt = vim.opt
 -- local g = vim.g
