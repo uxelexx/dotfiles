@@ -8,18 +8,18 @@ M.mappings = require "custom.mappings"
 M.ui = {
   transparency = true,
   theme = "nightfox",
+
   hl_override = {
     Comment = { italic = true },
   },
 
   statusline = {
-    separator_style = "default",
+    separator_style = "round",
     theme = "vscode",
   },
 
   nvdash = {
     load_on_startup = false,
-
     header = {
       "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣄⢲⡰⣄⢂⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀",
       "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠠⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢤⣱⣾⣿⣿⣿⣿⣴⠁⡀⠀⠀⠀⠀⠀⠀⣀⠁⠄",
@@ -42,9 +42,7 @@ M.ui = {
       "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⠀⠀⠌⢻⠘⣿⡇⡘⣿⣿⡗⣹⣿⣿⠄⢻⣿⡳⡟⠀⠨⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
       "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠻⠁⠈⢼⣿⣟⢸⣿⡟⢌⠚⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
     },
-
   },
-
 }
 
 return M
