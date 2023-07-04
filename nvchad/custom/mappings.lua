@@ -3,49 +3,41 @@ local M = {}
 
 M.general = {
   n = {
-    ["H"] = { "^", "line start" },
-    ["L"] = { "$", "line end" },
+    ["H"] = { "^", "Line start" },
+    ["L"] = { "$", "Line end" },
+    ["cL"] = { "c$", "Change to line end"},
 
-    -- center while search next
-    ["n"] = {"nzzzn", "center"},
-    ["N"] = {"Nzzzn", "center"},
+    ["n"] = {"nzzzn", "Center while search"},
+    ["N"] = {"Nzzzn", "Center while search backwards"},
 
-    ["<C-a>"] = { "gg<s-v>G", "Select all" }, -- select all
+    ["<C-a>"] = { "gg<s-v>G", "Select all" },
 
-    -- center while seach 
-    ["<C-d>"] = { "<C-d>zz" },
-    ["<C-u>"] = { "<C-u>zz" },
+    ["<C-d>"] = { "<C-d>zz", "Half screen down and center" },
+    ["<C-u>"] = { "<C-u>zz", "Half screen down and center" },
 
-    -- organize imports
-    ["<leader>oi"] = { ":OrganizeImports <CR>" },
+    ["<leader>oi"] = { ":OrganizeImports <CR>", "Organize imports" },
 
-    -- lazygit
     ["<leader>lg"] = { ":LazyGit<CR>", "Open LazyGit", opts = { silent = true } },
 
-    -- zenmode
-    ["<leader>zz"] = { ":ZenMode <CR>", "toggle ZenMode", opts = { silent = true } },
+    ["<leader>zz"] = { ":ZenMode <CR>", "Toggle ZenMode", opts = { silent = true } },
   },
 
   v = {
-    --move lines
-    ["K"] = { ":m '<-2<CR>gv=gv", "move line up" },
-    ["J"] = { ":m '>+1<CR>gv=gv", "move line down" },
+    ["K"] = { ":m '<-2<CR>gv=gv", "Move line up" },
+    ["J"] = { ":m '>+1<CR>gv=gv", "Move line down" },
 
-    ["H"] = {"^", "line start"},
-    ["L"] = {"$", "line end"},
+    ["H"] = {"^", "Line start"},
+    ["L"] = {"$", "Line end"},
 
-    -- yank to clipboard
-    ["<leader>c"] = { '"*y', "yank to clipboard"},
+    ["<leader>c"] = { '"*y', "Yank to clipboard"},
 
-    ["y"] = { "ygv<ESC>", "yank without moving" }
+    ["y"] = { "ygv<ESC>", "Yank without moving" }
   },
 
   i = {
-    -- exit insert mode
-    ["jj"] = { "<ESC>", "Escape insert mode" },
+    ["jj"] = { "<ESC>", "Exit insert mode" },
 
-    -- save and exit insert mode
-    ["<C-s>"] = { "<cmd> w <CR><ESC>", "save file and escape" },
+    ["<C-s>"] = { "<cmd> w <CR><ESC>", "Save file and escape" },
   }
 }
 
@@ -62,14 +54,5 @@ M.lspconfig = {
     },
   },
 }
-
-
-
--- M.telescope = {
---
---   n = {
---     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
---   }
--- }
 
 return M
