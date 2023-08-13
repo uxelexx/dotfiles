@@ -10,12 +10,16 @@ M.treesitter = {
     "lua",
     "tsx",
     "typescript",
-    "prisma",
+    "markdown",
+    -- "prisma",
     "go",
     -- "bash",
     -- "graphql",
     -- "regex",
   },
+  autotag = {
+    enable = true,
+  }
 }
 
 M.nvimtree = {
@@ -38,6 +42,13 @@ M.nvimtree = {
       show = {
         git = true,
       },
+      glyphs = {
+        default = "󰈚",
+        symlink = "",
+        folder = {
+          default = "󰉋",
+        },
+      },
     },
   },
 }
@@ -52,30 +63,15 @@ M.mason = {
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
-    -- "deno",
-    "emmet-ls",
+    -- "emmet-ls",
+    "prettier",
     "json-lsp",
     "tailwindcss-language-server",
 
     -- shell
-    "shfmt",
-    "shellcheck",
+    -- "shfmt",
+    -- "shellcheck",
   },
 }
-
-M.nvimtree = {
-  renderer = {
-    icons = {
-      glyphs = {
-        default = "󰈚",
-        symlink = "",
-        folder = {
-          default = "󰉋",
-        },
-      },
-    },
-  }
-}
-
 
 return M

@@ -6,15 +6,15 @@ M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
 
 M.ui = {
-  transparency = true,
-  theme = "nightfox",
+  transparency = false,
+  theme = "ayu_dark",
 
   hl_override = {
     Comment = { italic = true },
   },
 
   statusline = {
-    separator_style = "round",
+    -- separator_style = "default",
     theme = "vscode",
   },
 

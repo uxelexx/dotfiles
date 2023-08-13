@@ -20,6 +20,17 @@ M.general = {
     ["<leader>lg"] = { ":LazyGit<CR>", "Open LazyGit", opts = { silent = true } },
 
     ["<leader>zz"] = { ":ZenMode <CR>", "Toggle ZenMode", opts = { silent = true } },
+    ["<leader>ca"] = { ":Lspsaga code_action <CR>", "LSP saga code action" },
+    ["<leader>gd"] = { ":Lspsaga finder<CR>", "LSP saga finder" },
+    ["<leader>gp"] = { ":Lspsaga peek_definition<CR>", "LSP peek definition" },
+
+    ["<leader>tt"] = {
+      function()
+        require("base46").toggle_transparency()
+      end,
+      "toggle transparency",
+    },
+
   },
 
   v = {
@@ -44,7 +55,17 @@ M.general = {
 -- Plugins remaps
 
 M.lspconfig = {
+  n = {
+    ["<A-d>"] = {
+      function()
+        vim.diagnostic.open_float()
+      end,
+      "floating diagnostic",
+    },
+  },
+}
 
+M.lspsaga = {
   n = {
     ["<A-d>"] = {
       function()
