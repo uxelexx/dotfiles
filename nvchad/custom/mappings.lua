@@ -24,6 +24,8 @@ M.general = {
     ["<leader>gd"] = { ":Lspsaga finder<CR>", "LSP saga finder" },
     ["<leader>gp"] = { ":Lspsaga peek_definition<CR>", "LSP peek definition" },
 
+    ["<leader>q"] = { ":Trouble<CR>", "Folke trouble" },
+
     ["<leader>tt"] = {
       function()
         require("base46").toggle_transparency()
@@ -55,17 +57,6 @@ M.general = {
 -- Plugins remaps
 
 M.lspconfig = {
-  n = {
-    ["<A-d>"] = {
-      function()
-        vim.diagnostic.open_float()
-      end,
-      "floating diagnostic",
-    },
-  },
-}
-
-M.lspsaga = {
   n = {
     ["<A-d>"] = {
       function()

@@ -1,9 +1,7 @@
 local overrides = require "custom.configs.overrides"
 
-
 ---@type NvPluginSpec[]
 return {
-
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -19,14 +17,11 @@ return {
     end,
   },
 
-  { "nvim-tree/nvim-tree.lua", opts =  overrides.nvimtree },
-  { "nvim-treesitter/nvim-treesitter", opts =  overrides.treesitter },
+  { "nvim-tree/nvim-tree.lua", opts = overrides.nvimtree },
+  { "nvim-treesitter/nvim-treesitter", opts = overrides.treesitter },
   { "williamboman/mason.nvim", opts = overrides.mason },
 
   -------------------------- custom plugins -----------------------------
-  {
-    "nvim-tree/nvim-web-devicons",
-  },
 
   {
     "windwp/nvim-ts-autotag",
@@ -49,7 +44,7 @@ return {
 
   {
     "kdheepak/lazygit.nvim",
-    event = "VeryLazy",
+    lazy = true,
     cmd = "LazyGit",
   },
 
@@ -87,6 +82,15 @@ return {
       "nvim-treesitter/nvim-treesitter", -- optional
       "nvim-tree/nvim-web-devicons"     -- optional
     },
+  },
+
+  {
+    "folke/trouble.nvim",
+    cmd = "Trouble",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("trouble").setup()
+    end,
   },
 
   {
