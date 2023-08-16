@@ -6,8 +6,8 @@ M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
 
 M.ui = {
-  transparency = false,
-  theme = "ayu_dark",
+  transparency = true,
+  theme = "decay",
 
   hl_override = {
     Comment = { italic = true },
