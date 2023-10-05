@@ -1,6 +1,7 @@
 local overrides = require "custom.configs.overrides"
 
----@type NvPluginSpec[]
+--@type NvPluginSpec[]
+
 return {
   {
     "neovim/nvim-lspconfig",
@@ -51,7 +52,7 @@ return {
   {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
-    event = "VeryLazy",
+    lazy = true,
     config = function()
       require "custom.configs.zenmode"
     end,
@@ -83,6 +84,17 @@ return {
       "nvim-tree/nvim-web-devicons"     -- optional
     },
   },
+
+  -- Doesnt work with transparent background
+  -- {
+  --   "andreadev-it/shade.nvim",
+  --   keys = "<Bslash>",
+  --   config = function()
+  --     require("shade").setup {
+  --       exclude_filetypes = { "NvimTree" },
+  --     }
+  --   end,
+  -- },
 
   {
     "folke/trouble.nvim",
