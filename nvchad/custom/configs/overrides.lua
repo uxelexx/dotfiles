@@ -32,9 +32,9 @@ M.nvimtree = {
     ignore = false,
   },
 
-  view = {
-    hide_root_folder = false,
-  },
+  -- view = {
+  --   hide_root_folder = false,
+  -- },
 
   renderer = {
     highlight_git = true,

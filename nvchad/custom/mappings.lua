@@ -60,9 +60,21 @@ M.lspconfig = {
   n = {
     ["<A-d>"] = {
       function()
-        vim.diagnostic.open_float()
+        vim.diagnostic.open_float { border = "rounded" }
       end,
-      "floating diagnostic",
+      "Floating diagnostic",
+    },
+  },
+}
+
+M.lsp = {
+  n = {
+    ["<leader>fm"] = {
+
+      function()
+        require("conform").format()
+      end,
+      "format with conform",
     },
   },
 }

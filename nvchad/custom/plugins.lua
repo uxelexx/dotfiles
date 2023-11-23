@@ -5,16 +5,18 @@ local overrides = require "custom.configs.overrides"
 return {
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      "jose-elias-alvarez/null-ls.nvim",
-      config = function()
-        require "custom.configs.null-ls"
-      end,
-    },
+    dependencies = {},
 
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
+    end,
+  },
+
+  {
+    "stevearc/conform.nvim",
+    config = function()
+      require "custom.configs.conform"
     end,
   },
 
@@ -27,9 +29,6 @@ return {
   {
     "windwp/nvim-ts-autotag",
     event = "InsertEnter",
-    -- config = function()
-    --   require("nvim-ts-autotag").setup({})
-    -- end,
   },
 
   {
@@ -84,17 +83,6 @@ return {
       "nvim-tree/nvim-web-devicons"     -- optional
     },
   },
-
-  -- Doesnt work with transparent background
-  -- {
-  --   "andreadev-it/shade.nvim",
-  --   keys = "<Bslash>",
-  --   config = function()
-  --     require("shade").setup {
-  --       exclude_filetypes = { "NvimTree" },
-  --     }
-  --   end,
-  -- },
 
   {
     "folke/trouble.nvim",

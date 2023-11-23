@@ -14,7 +14,6 @@ M.ui = {
   },
 
   statusline = {
-    -- separator_style = "default",
     theme = "vscode",
   },
 
