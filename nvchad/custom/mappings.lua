@@ -70,9 +70,8 @@ M.lspconfig = {
 M.lsp = {
   n = {
     ["<leader>fm"] = {
-
       function()
-        require("conform").format()
+        require("conform").format({ async = true, lsp_fallback = true })
       end,
       "format with conform",
     },
