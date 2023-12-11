@@ -23,6 +23,16 @@ return {
   { "nvim-tree/nvim-tree.lua", opts = overrides.nvimtree },
   { "nvim-treesitter/nvim-treesitter", opts = overrides.treesitter },
   { "williamboman/mason.nvim", opts = overrides.mason },
+  {
+    "NvChad/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({
+        user_default_options = {
+          hsl_fn = true, -- CSS hsl() and hsla() functions
+        },
+      })
+    end,
+  },
 
   -------------------------- custom plugins -----------------------------
 
@@ -95,27 +105,29 @@ return {
 
   {
     "Exafunction/codeium.vim",
-    event = "InsertEnter",
+    event = "BufEnter",
     config = function ()
       vim.keymap.set('i', '<C-y>', function () return vim.fn['codeium#Accept']() end, { expr = true })
-      vim.keymap.set('i', '<c-]>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
-      vim.keymap.set('i', '<c-.>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+      vim.keymap.set('i', '<C-]>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+      vim.keymap.set('i', '<C-.>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
     end
   },
 
-  -- {
-  --     "ray-x/go.nvim",
-  --     dependencies = {  -- optional packages
-  --         "ray-x/guihua.lua",
-  --         "neovim/nvim-lspconfig",
-  --         "nvim-treesitter/nvim-treesitter",
-  --     },
-  --     config = function()
-  --         require("go").setup()
-  --     end,
-  --     event = {"CmdlineEnter"},
-  --     ft = {"go", "gomod"},
-  --     build = ":lua require("go.install").update_all_sync()" -- if you need to install/update all binaries
-  -- }
 }
+
+
+-- {
+--     "ray-x/go.nvim",
+--     dependencies = {  -- optional packages
+--         "ray-x/guihua.lua",
+--         "neovim/nvim-lspconfig",
+--         "nvim-treesitter/nvim-treesitter",
+--     },
+--     config = function()
+--         require("go").setup()
+--     end,
+--     event = {"CmdlineEnter"},
+--     ft = {"go", "gomod"},
+--     build = ":lua require("go.install").update_all_sync()" -- if you need to install/update all binaries
+-- }
 
