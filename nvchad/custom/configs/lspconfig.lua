@@ -1,8 +1,8 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local base = require "plugins.configs.lspconfig"
+local on_attach = base.on_attach
+local capabilities = base.capabilities
 
 local lspconfig = require "lspconfig"
-local util = require "lspconfig/util"
 
 local servers = {
   "html",
@@ -31,8 +31,8 @@ end
 local function organize_imports()
   local params = {
     command = "_typescript.organizeImports",
-    arguments = {vim.api.nvim_buf_get_name(0)},
-    title = ""
+    arguments = { vim.api.nvim_buf_get_name(0) },
+    title = "",
   }
   vim.lsp.buf.execute_command(params)
 end
@@ -43,7 +43,7 @@ lspconfig.tsserver.setup {
   commands = {
     OrganizeImports = {
       organize_imports,
-      description = "Organize Imports"
-    }
-  }
+      description = "Organize Imports",
+    },
+  },
 }

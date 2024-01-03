@@ -26,11 +26,11 @@ return {
   {
     "NvChad/nvim-colorizer.lua",
     config = function()
-      require("colorizer").setup({
+      require("colorizer").setup {
         user_default_options = {
           hsl_fn = true, -- CSS hsl() and hsla() functions
         },
-      })
+      }
     end,
   },
 
@@ -46,10 +46,10 @@ return {
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup({
+      require("nvim-surround").setup {
         -- Configuration here, or leave empty to use defaults
-      })
-    end
+      }
+    end,
   },
 
   {
@@ -72,14 +72,14 @@ return {
     event = "InsertEnter",
     config = function()
       require "custom.configs.autosave"
-    end
+    end,
   },
 
   {
     "nvim-treesitter/nvim-treesitter-context",
     event = "InsertEnter",
     dependencies = "nvim-treesitter",
-    opts = { max_lines = 2, }
+    opts = { max_lines = 2 },
   },
 
   {
@@ -90,7 +90,7 @@ return {
     end,
     dependencies = {
       "nvim-treesitter/nvim-treesitter", -- optional
-      "nvim-tree/nvim-web-devicons"     -- optional
+      "nvim-tree/nvim-web-devicons", -- optional
     },
   },
 
@@ -106,15 +106,19 @@ return {
   {
     "Exafunction/codeium.vim",
     event = "BufEnter",
-    config = function ()
-      vim.keymap.set('i', '<C-y>', function () return vim.fn['codeium#Accept']() end, { expr = true })
-      vim.keymap.set('i', '<C-]>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
-      vim.keymap.set('i', '<C-.>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
-    end
+    config = function()
+      vim.keymap.set("i", "<C-y>", function()
+        return vim.fn["codeium#Accept"]()
+      end, { expr = true })
+      vim.keymap.set("i", "<C-]>", function()
+        return vim.fn["codeium#CycleCompletions"](1)
+      end, { expr = true })
+      vim.keymap.set("i", "<C-.>", function()
+        return vim.fn["codeium#CycleCompletions"](-1)
+      end, { expr = true })
+    end,
   },
-
 }
-
 
 -- {
 --     "ray-x/go.nvim",
@@ -130,4 +134,3 @@ return {
 --     ft = {"go", "gomod"},
 --     build = ":lua require("go.install").update_all_sync()" -- if you need to install/update all binaries
 -- }
-

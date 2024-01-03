@@ -5,10 +5,10 @@ M.general = {
   n = {
     ["H"] = { "^", "Line start" },
     ["L"] = { "$", "Line end" },
-    ["cL"] = { "c$", "Change to line end"},
+    ["cL"] = { "c$", "Change to line end" },
 
-    ["n"] = {"nzzzn", "Center while search"},
-    ["N"] = {"Nzzzn", "Center while search backwards"},
+    ["n"] = { "nzzzn", "Center while search" },
+    ["N"] = { "Nzzzn", "Center while search backwards" },
 
     ["<C-a>"] = { "gg<s-v>G", "Select all" },
 
@@ -33,25 +33,31 @@ M.general = {
       "toggle transparency",
     },
 
+    ["<leader>ct"] = {
+      function()
+        require("nvchad.tabufline").closeAllBufs()
+      end,
+      "Close all buffers",
+    },
   },
 
   v = {
     ["K"] = { ":m '<-2<CR>gv=gv", "Move line up" },
     ["J"] = { ":m '>+1<CR>gv=gv", "Move line down" },
 
-    ["H"] = {"^", "Line start"},
-    ["L"] = {"$", "Line end"},
+    ["H"] = { "^", "Line start" },
+    ["L"] = { "$", "Line end" },
 
-    ["<leader>c"] = { '"*y', "Yank to clipboard"},
+    ["<leader>c"] = { '"*y', "Yank to clipboard" },
 
-    ["y"] = { "ygv<ESC>", "Yank without moving" }
+    ["y"] = { "ygv<ESC>", "Yank without moving" },
   },
 
   i = {
     ["jj"] = { "<ESC>", "Exit insert mode" },
 
     ["<C-s>"] = { "<cmd> w <CR><ESC>", "Save file and escape" },
-  }
+  },
 }
 
 -- Plugins remaps
@@ -71,7 +77,7 @@ M.lsp = {
   n = {
     ["<leader>fm"] = {
       function()
-        require("conform").format({ async = true, lsp_fallback = true })
+        require("conform").format { async = true, lsp_fallback = true }
       end,
       "format with conform",
     },

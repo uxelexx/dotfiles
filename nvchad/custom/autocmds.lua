@@ -2,17 +2,13 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -- Toggle relative line numbers in insert mode
 autocmd("InsertEnter", {
-  callback = function ()
+  fallback = function()
     vim.opt.relativenumber = false
-  end
+  end,
 })
 
 autocmd("InsertLeave", {
-  callback = function ()
+  callback = function()
     vim.opt.relativenumber = true
-  end
+  end,
 })
-
---go tags
-
-

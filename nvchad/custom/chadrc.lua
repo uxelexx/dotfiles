@@ -6,15 +6,16 @@ M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
 
 M.ui = {
-  transparency = true,
-  theme = "decay",
+  transparency = false,
+  theme = "dark_horizon",
 
   hl_override = {
     Comment = { italic = true },
   },
 
   statusline = {
-    theme = "vscode",
+    theme = "minimal",
+    separator_style = "block",
   },
 
   nvdash = {

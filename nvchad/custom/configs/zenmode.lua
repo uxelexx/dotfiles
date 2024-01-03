@@ -6,7 +6,7 @@ local options = {
     options = {
       number = true,
       relativenumber = true,
-    }
+    },
   },
   plugins = {
     options = {

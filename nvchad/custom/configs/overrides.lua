@@ -19,7 +19,7 @@ M.treesitter = {
   },
   autotag = {
     enable = true,
-  }
+  },
 }
 
 M.nvimtree = {
@@ -57,12 +57,14 @@ M.mason = {
   ensure_installed = {
     -- lua stuff
     "lua-language-server",
-    -- "stylua",
+    "stylua",
 
     -- web dev
     "css-lsp",
+    "eslint-lsp",
     "html-lsp",
     "typescript-language-server",
+
     -- "emmet-ls",
     "prettier",
     "json-lsp",
