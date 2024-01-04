@@ -5,7 +5,6 @@ M.general = {
   n = {
     ["H"] = { "^", "Line start" },
     ["L"] = { "$", "Line end" },
-    ["cL"] = { "c$", "Change to line end" },
 
     ["n"] = { "nzzzn", "Center while search" },
     ["N"] = { "Nzzzn", "Center while search backwards" },
@@ -22,7 +21,7 @@ M.general = {
     ["<leader>zz"] = { ":ZenMode <CR>", "Toggle ZenMode", opts = { silent = true } },
     ["<leader>ca"] = { ":Lspsaga code_action <CR>", "LSP saga code action" },
     ["<leader>gd"] = { ":Lspsaga finder<CR>", "LSP saga finder" },
-    ["<leader>gp"] = { ":Lspsaga peek_definition<CR>", "LSP peek definition" },
+    ["<leader>gp"] = { ":Lspsaga peek_definition<CR>", "LSP saga peek definition" },
 
     ["<leader>q"] = { ":Trouble<CR>", "Folke trouble" },
 
@@ -56,7 +55,7 @@ M.general = {
   i = {
     ["jj"] = { "<ESC>", "Exit insert mode" },
 
-    ["<C-s>"] = { "<cmd> w <CR><ESC>", "Save file and escape" },
+    ["<C-s>"] = { ":w<CR>", "Save file and escape" },
   },
 }
 
