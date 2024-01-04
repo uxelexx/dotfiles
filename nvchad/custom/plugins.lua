@@ -4,6 +4,35 @@ local overrides = require "custom.configs.overrides"
 
 return {
   {
+    "hrsh7th/nvim-cmp",
+    opts = overrides.cmp,
+
+    dependencies = {
+      {
+        -- snippet plugin
+        "L3MON4D3/LuaSnip",
+        config = function(_, opts)
+          -- load default luasnip config
+          require("plugins.configs.others").luasnip(opts)
+
+          -- local luasnip = require "luasnip"
+          -- luasnip.filetype_extend("javascriptreact", { "html" })
+          -- luasnip.filetype_extend("typescriptreact", { "html" })
+          require("luasnip/loaders/from_vscode").lazy_load()
+        end,
+      },
+
+      -- ai based completion
+      {
+        "Exafunction/codeium.nvim",
+        config = function()
+          require("codeium").setup()
+        end,
+      },
+    },
+  },
+
+  {
     "neovim/nvim-lspconfig",
     dependencies = {},
 
@@ -20,9 +49,6 @@ return {
     end,
   },
 
-  { "nvim-tree/nvim-tree.lua", opts = overrides.nvimtree },
-  { "nvim-treesitter/nvim-treesitter", opts = overrides.treesitter },
-  { "williamboman/mason.nvim", opts = overrides.mason },
   {
     "NvChad/nvim-colorizer.lua",
     config = function()
@@ -34,17 +60,23 @@ return {
     end,
   },
 
+  { "nvim-tree/nvim-tree.lua", opts = overrides.nvimtree },
+  { "nvim-treesitter/nvim-treesitter", opts = overrides.treesitter },
+  { "williamboman/mason.nvim", opts = overrides.mason },
+
   -------------------------- custom plugins -----------------------------
 
   {
     "windwp/nvim-ts-autotag",
     event = "InsertEnter",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
   },
 
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
     config = function()
       require("nvim-surround").setup {
         -- Configuration here, or leave empty to use defaults
@@ -54,14 +86,12 @@ return {
 
   {
     "kdheepak/lazygit.nvim",
-    lazy = true,
     cmd = "LazyGit",
   },
 
   {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
-    lazy = true,
     config = function()
       require "custom.configs.zenmode"
     end,
@@ -102,35 +132,26 @@ return {
       require("trouble").setup()
     end,
   },
-
-  {
-    "Exafunction/codeium.vim",
-    event = "BufEnter",
-    config = function()
-      vim.keymap.set("i", "<C-y>", function()
-        return vim.fn["codeium#Accept"]()
-      end, { expr = true })
-      vim.keymap.set("i", "<C-]>", function()
-        return vim.fn["codeium#CycleCompletions"](1)
-      end, { expr = true })
-      vim.keymap.set("i", "<C-.>", function()
-        return vim.fn["codeium#CycleCompletions"](-1)
-      end, { expr = true })
-    end,
-  },
 }
 
--- {
---     "ray-x/go.nvim",
---     dependencies = {  -- optional packages
---         "ray-x/guihua.lua",
---         "neovim/nvim-lspconfig",
---         "nvim-treesitter/nvim-treesitter",
---     },
---     config = function()
---         require("go").setup()
---     end,
---     event = {"CmdlineEnter"},
---     ft = {"go", "gomod"},
---     build = ":lua require("go.install").update_all_sync()" -- if you need to install/update all binaries
--- }
+-- Old codeium
+--[[
+{
+"Exafunction/codeium.nvim",
+event = "BufEnter",
+config = function()
+  require("codeium").setup()
+end,
+config = function()
+  vim.keymap.set("i", "<C-y>", function()
+    return vim.fn["codeium#Accept"]()
+  end, { expr = true })
+  vim.keymap.set("i", "<C-]>", function()
+    return vim.fn["codeium#CycleCompletions"](1)
+  end, { expr = true })
+  vim.keymap.set("i", "<C-.>", function()
+    return vim.fn["codeium#CycleCompletions"](-1)
+  end, { expr = true })
+end,
+}, 
+]]
