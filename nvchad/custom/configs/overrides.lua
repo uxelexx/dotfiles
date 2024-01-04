@@ -24,18 +24,16 @@ M.treesitter = {
 
 M.nvimtree = {
   filters = {
+    dotfiles = true,
     custom = { "node_modules" },
   },
-
   git = {
     enable = true,
     ignore = false,
   },
-
   -- view = {
   --   hide_root_folder = false,
   -- },
-
   renderer = {
     highlight_git = true,
     icons = {
@@ -73,6 +71,21 @@ M.mason = {
     -- shell
     -- "shfmt",
     -- "shellcheck",
+  },
+}
+
+M.cmp = {
+  sources = {
+    -- trigger_characters is for unocss lsp
+    { name = "nvim_lsp", trigger_characters = { "-" } },
+    { name = "path" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "codeium" },
+    { name = "nvim_lua" },
+  },
+  experimental = {
+    ghost_text = true,
   },
 }
 
