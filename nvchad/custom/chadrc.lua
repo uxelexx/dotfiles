@@ -7,7 +7,7 @@ M.mappings = require "custom.mappings"
 
 M.ui = {
   transparency = false,
-  theme = "dark_horizon",
+  theme = "yoru",
 
   hl_override = {
     Comment = { italic = true },
@@ -15,7 +15,7 @@ M.ui = {
 
   statusline = {
     theme = "minimal",
-    separator_style = "block",
+    separator_style = "default",
   },
 
   nvdash = {
