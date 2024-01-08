@@ -31,18 +31,14 @@ M.nvimtree = {
     enable = true,
     ignore = false,
   },
-  -- view = {
-  --   hide_root_folder = false,
-  -- },
   renderer = {
+    -- root_folder_label = true,
     highlight_git = true,
     icons = {
       show = {
         git = true,
       },
       glyphs = {
-        default = "󰈚",
-        symlink = "",
         folder = {
           default = "󰉋",
         },
@@ -77,7 +73,7 @@ M.mason = {
 M.cmp = {
   sources = {
     -- trigger_characters is for unocss lsp
-    { name = "nvim_lsp", trigger_characters = { "-" } },
+    { name = "nvim_lsp" },
     { name = "path" },
     { name = "luasnip" },
     { name = "buffer" },
