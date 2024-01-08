@@ -6,12 +6,14 @@ local options = {
   },
   ui = {
     border = "rounded",
+    code_action = " ｷ",
   },
   outline = {
     layout = "float",
   },
   lightbulb = {
-    enable = false,
+    -- enable = false,
+    virtual_text = false,
   },
 }
 
