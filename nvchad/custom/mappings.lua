@@ -19,6 +19,7 @@ M.general = {
     ["<leader>lg"] = { ":LazyGit<CR>", "Open LazyGit", opts = { silent = true } },
 
     ["<leader>zz"] = { ":ZenMode <CR>", "Toggle ZenMode", opts = { silent = true } },
+
     ["<leader>ca"] = { ":Lspsaga code_action <CR>", "LSP saga code action" },
     ["<leader>gd"] = { ":Lspsaga finder<CR>", "LSP saga finder" },
     ["<leader>gp"] = { ":Lspsaga peek_definition<CR>", "LSP saga peek definition" },
