@@ -1,7 +1,7 @@
-# $omp_config = Join-Path $PSScriptRoot '.\uxelexx.omp.json'
-# oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
+Import-Module -Name Terminal-Icons
 
-oh-my-posh --init --shell pwsh --config 'C:\Users\Kirill\AppData\Local\Programs\oh-my-posh\themes\uxelexx.omp.json' | Invoke-Expression
+oh-my-posh --init --shell pwsh --config 'C:\Users\Kirill\AppData\Local\Programs\oh-my-posh\themes\takuya.omp.json' | Invoke-Expression
+
 
 ######### PSReadLine
 Set-PSReadLineOption -EditMode Emacs
