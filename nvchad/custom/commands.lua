@@ -1,49 +1,41 @@
 local create_cmd = vim.api.nvim_create_user_command
 
--- local ts_utils = require("nvim-treesitter.ts_utils")
---
--- --golang tags
--- local function get_struct_name()
---   local node = ts_utils.get_node_at_cursor()
---   while node do
---     if node:type() == "struct_type" then
---       break
---     end
---
---     local prev = ts_utils.get_previous_node(node, false, false)
---     if prev ==  nil then
---       node = node:parent()
---     else
---       node = prev
---     end
---   end
---
---   if node == nil then
---     return nil
---   end
---
---   local structNode = ts_utils.get_previous_node(node, false, false)
---
---   return vim.treesitter.get_node_text(structNode, 0)
--- end
---
--- local function GoAddTags(args)
---   local path = vim.fn.expand("%:p")
---   local structName = get_struct_name()
---
---   if structName == nil then
---     error("struct not found, place cursor inside a struct")
---   end
---
---   local tag = args.fargs[1]
---   if tag == nil then
---     error("it needs tag name")
---     return
---   end
---
---   local cmd = ":! gomodifytags -w -file " .. path .. " -struct " .. structName .. " -add-tags " .. tag
---
---   vim.api.nvim_exec(cmd, true)
--- end
---
--- create_cmd("GoAddTags", GoAddTags, {})
+local function clear_cmdarea()
+  vim.defer_fn(function()
+    vim.api.nvim_echo({}, false, {})
+  end, 1200)
+end
+
+local function autosave()
+  vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+    callback = function()
+      if #vim.api.nvim_buf_get_name(0) ~= 0 and vim.bo.buflisted and vim.g.autosave then
+        vim.cmd "silent w"
+
+        vim.api.nvim_echo(
+          { { "󰄳", "LazyProgressDone" }, { " file autosaved at " .. os.date "%I:%M %p" } },
+          false,
+          {}
+        )
+
+        clear_cmdarea()
+      end
+    end,
+  })
+end
+
+create_cmd("ToggleAutoSave", function()
+  vim.g.autosave = not vim.g.autosave
+
+  if vim.g.autosave then
+    autosave()
+  end
+
+  if vim.g.autosave then
+    vim.api.nvim_echo({ { "󰆓 ", "LazyProgressDone" }, { "autosave enabled!" } }, false, {})
+  else
+    vim.api.nvim_echo({ { "󰚌 ", "LazyNoCond" }, { "autosave disabled" } }, false, {})
+  end
+
+  clear_cmdarea()
+end, {})
