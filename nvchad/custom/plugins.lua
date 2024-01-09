@@ -26,6 +26,7 @@ return {
     end,
   },
 
+
   -------------------------- custom plugins -----------------------------
 
   --- quality of life
@@ -52,14 +53,6 @@ return {
   {
     "kdheepak/lazygit.nvim",
     cmd = "LazyGit",
-  },
-
-  {
-    "Pocco81/auto-save.nvim",
-    event = "InsertEnter",
-    config = function()
-      require "custom.configs.autosave"
-    end,
   },
 
   {
