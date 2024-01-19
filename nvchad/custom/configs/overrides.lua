@@ -1,6 +1,17 @@
 -- overriding default plugin configs!
 local M = {}
 
+local border = {
+  { "╭", "CmpBorder" },
+  { "─", "CmpBorder" },
+  { "╮", "CmpBorder" },
+  { "│", "CmpBorder" },
+  { "╯", "CmpBorder" },
+  { "─", "CmpBorder" },
+  { "╰", "CmpBorder" },
+  { "│", "CmpBorder" },
+}
+
 M.treesitter = {
   ensure_installed = {
     "css",
@@ -10,9 +21,9 @@ M.treesitter = {
     "lua",
     "tsx",
     "typescript",
-    "markdown",
-    -- "prisma",
     "go",
+    -- "markdown",
+    -- "prisma",
     -- "bash",
     -- "graphql",
     -- "regex",
@@ -71,6 +82,9 @@ M.mason = {
 }
 
 M.cmp = {
+  window = {
+    documentation = { border = border, winhighlight = "Normal:CmpNormal" },
+  },
   sources = {
     -- trigger_characters is for unocss lsp
     { name = "nvim_lsp" },
