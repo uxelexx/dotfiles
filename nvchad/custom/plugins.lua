@@ -12,10 +12,10 @@ return {
     end,
   },
 
+  { "williamboman/mason.nvim", opts = overrides.mason },
+  { "nvim-tree/nvim-tree.lua", opts = overrides.nvimtree },
   { "nvim-tree/nvim-tree.lua", opts = overrides.nvimtree },
   { "nvim-treesitter/nvim-treesitter", opts = overrides.treesitter },
-  { "nvim-tree/nvim-tree.lua", opts = overrides.nvimtree },
-  { "williamboman/mason.nvim", opts = overrides.mason },
 
   ---formatting
 
@@ -26,7 +26,6 @@ return {
     end,
   },
 
-
   -------------------------- custom plugins -----------------------------
 
   --- quality of life
@@ -35,7 +34,7 @@ return {
     "windwp/nvim-ts-autotag",
     event = "InsertEnter",
     config = function()
-      require("nvim-ts-autotag").setup()
+      require("nvim-ts-autotag").setup {}
     end,
   },
 
@@ -54,6 +53,14 @@ return {
     "kdheepak/lazygit.nvim",
     cmd = "LazyGit",
   },
+
+  -- {
+  --   "Pocco81/auto-save.nvim",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require "custom.configs.autosave"
+  --   end,
+  -- },
 
   {
     "nvim-treesitter/nvim-treesitter-context",
