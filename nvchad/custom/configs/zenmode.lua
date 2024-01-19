@@ -1,5 +1,3 @@
-local zen_mode = require "zen-mode"
-
 local options = {
   window = {
     width = 100,
@@ -16,4 +14,4 @@ local options = {
   },
 }
 
-zen_mode.setup(options)
+require("zen-mode").setup(options)
