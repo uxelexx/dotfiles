@@ -9,6 +9,8 @@ M.ui = {
   transparency = false,
   theme = "yoru",
 
+  lsp_semantic_tokens = true, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
+
   hl_override = {
     Comment = { italic = true },
   },
